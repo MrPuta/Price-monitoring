@@ -5,6 +5,7 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -12,7 +13,8 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).parent
 PRODUCTS_FILE = ROOT / "products.json"
 CSV_FILE = ROOT / "data" / "prices.csv"
-FIELDS = ["timestamp_utc", "product", "url", "price", "currency", "status"]
+FIELDS = ["timestamp_utc", "product_id", "model", "vram_gb", "shop",
+          "price", "currency", "status", "url"]
 
 HEADERS = {
     "User-Agent": (
@@ -97,27 +99,53 @@ def fetch_price(url, selector=None):
     raise ValueError("Nie udało się znaleźć ceny (ustaw 'selector' w products.json)")
 
 
+def shop_from_url(url):
+    """https://www.x-kom.pl/p/123 -> x-kom.pl"""
+    return urlparse(url).netloc.removeprefix("www.")
+
+
+def open_csv():
+    """Otwiera CSV do dopisywania. Jeśli nagłówek jest stary, robi kopię zapasową."""
+    if CSV_FILE.exists():
+        with CSV_FILE.open(encoding="utf-8") as f:
+            header = f.readline().strip().split(",")
+        if header != FIELDS:
+            backup = CSV_FILE.with_name("prices_old_format.csv")
+            CSV_FILE.rename(backup)
+            print(f"Zmieniony format - stary plik zapisano jako {backup.name}")
+    new_file = not CSV_FILE.exists()
+    f = CSV_FILE.open("a", newline="", encoding="utf-8")
+    writer = csv.DictWriter(f, fieldnames=FIELDS)
+    if new_file:
+        writer.writeheader()
+    return f, writer
+
+
 def main():
     products = json.loads(PRODUCTS_FILE.read_text(encoding="utf-8"))
     CSV_FILE.parent.mkdir(exist_ok=True)
-    new_file = not CSV_FILE.exists()
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     errors = 0
 
-    with CSV_FILE.open("a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=FIELDS)
-        if new_file:
-            writer.writeheader()
+    f, writer = open_csv()
+    with f:
         for p in products:
-            row = {"timestamp_utc": now, "product": p["name"], "url": p["url"],
-                   "price": "", "currency": "", "status": "ok"}
+            row = {
+                "timestamp_utc": now,
+                "product_id": p["id"],
+                "model": p["model"],
+                "vram_gb": p["vram_gb"],
+                "shop": p.get("shop") or shop_from_url(p["url"]),
+                "price": "", "currency": "", "status": "ok",
+                "url": p["url"],
+            }
             try:
                 row["price"], row["currency"] = fetch_price(p["url"], p.get("selector"))
-                print(f"{p['name']}: {row['price']} {row['currency']}")
-            except Exception as e:  # zapisujemy też błędy, żeby widzieć luki w danych
+                print(f"{p['id']}: {row['price']} {row['currency']}")
+            except Exception as e:  # błędy też zapisujemy, żeby widzieć luki
                 row["status"] = f"error: {e}"[:200]
                 errors += 1
-                print(f"{p['name']}: {row['status']}", file=sys.stderr)
+                print(f"{p['id']}: {row['status']}", file=sys.stderr)
             writer.writerow(row)
 
     sys.exit(1 if errors == len(products) else 0)

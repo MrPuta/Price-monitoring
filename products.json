@@ -1,18 +1,266 @@
 [
   {
-    "id": "rtx4070s-asus-dual",
-    "model": "RTX 5070",
-    "vram_gb": 12,
-    "shop": "Sklep 2",
-    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5070-gaming-oc-12gb-gddr7-dlss4-gv-n5070gaming-oc-12gd-14485482/",
+    "id": "rtx5060-ti-asus-dual-morele",
+    "model": "Asus Dual GeForce RTX 5060 Ti OC",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-asus-dual-geforce-rtx-5060-ti-oc-16gb-gddr7-dlss4-dual-rtx5060ti-o16g-14853321/",
     "selector": null
   },
   {
-    "id": "rtx4070s-asus-dual-shop2",
+    "id": "rtx5060-ti-msi-ventus-2x-morele",
+    "model": "MSI GeForce RTX 5060 Ti Ventus 2X OC Plus",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-msi-geforce-rtx-5060-ti-ventus-2x-oc-plus-16gb-gddr7-dlss4-14848093/",
+    "selector": ".price"
+  },
+    {
+    "id": "rtx5060-ti-palit-infinity-3-morele",
+    "model": "Palit GeForce RTX 5060 Ti Infinity 3",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-palit-geforce-rtx-5060-ti-infinity-3-16gb-gddr7-dlss4-ne7506t019t1-gb2061s-14848079/",
+    "selector": null
+  },
+  {
+    "id": "rtx5060-ti-palit-white-morele",
+    "model": "Palit GeForce RTX 5060 Ti White OC",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-palit-geforce-rtx-5060-ti-white-oc-16gb-gddr7-dlss4-ne7506tu19t1-gb2061m-15493486/",
+    "selector": ".price"
+  },
+    {
+    "id": "rtx5060-ti-inno3d-twin-x2-oc-morele",
+    "model": "Inno3D GeForce RTX 5060 Ti Twin X2 ",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-inno3d-geforce-rtx-5060-ti-twin-x2-oc-16gb-gddr7-dlss4-n506t2-16d7x-191073n-14863859/",
+    "selector": null
+  },
+  {
+    "id": "rtx5060-ti-gainward-ghost-morele",
+    "model": "Gainward GeForce RTX 5060 Ti Ghost",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gainward-geforce-rtx-5060-ti-ghost-oc-16gb-gddr7-dlss4-ne7506tu19t1-gb2061b-15533805/",
+    "selector": ".price"
+  },
+    {
+    "id": "rtx5060-ti-asus-prime-morele",
+    "model": "Asus Prime GeForce RTX 5060 Ti",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-asus-prime-geforce-rtx-5060-ti-oc-16gb-gddr7-dlss4-prime-rtx5060ti-o16g-14853320/",
+    "selector": null
+  },
+  {
+    "id": "rtx5060-ti-gigabyte-aero-morele",
+    "model": "Gigabyte GeForce RTX 5060 Ti Aero ",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5060-ti-aero-oc-16gb-gddr7-dlss4-gv-n506taero-oc-16gd-14848066/",
+    "selector": ".price"
+  },
+    {
+    "id": "rtx5070-inno3d-twin-x2-morele",
+    "model": "Inno3D GeForce RTX 5070 Twin X2",
+    "vram_gb": 12,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-inno3d-geforce-rtx-5070-twin-x2-12gb-gddr7-dlss4-n50702-12d7-195064n-14774505/",
+    "selector": null
+  },
+  {
+    "id": "rtx5070-msi-ventus-2x-morele",
+    "model": "MSI GeForce RTX 5070 Ventus 2X",
+    "vram_gb": 12,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-msi-geforce-rtx-5070-ventus-2x-oc-12gb-gddr7-dlss4-14734500/",
+    "selector": ".price"
+  },
+    {
+    "id": "rtx5060-ti-asus-tuf-morele",
+    "model": "Asus TUF GeForce RTX 5060 Ti",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-asus-tuf-geforce-rtx-5060-ti-oc-16gb-gddr7-dlss4-tuf-rtx5060ti-o16g-gaming-14853319/",
+    "selector": null
+  },
+  {
+    "id": "rtx5060-ti-gainward-python-III-morele",
+    "model": "Gainward GeForce RTX 5060 Ti Python III ",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gainward-geforce-rtx-5060-ti-python-iii-16gb-gddr7-dlss4-ne7506t019t1-gb2061t-14896519/",
+    "selector": ".price"
+  },
+    {
+    "id": "rtx5060-ti-msi-gaming-trio-morele",
+    "model": "MSI GeForce RTX 5060 Ti Gaming Trio OC",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-msi-geforce-rtx-5060-ti-gaming-trio-oc-white-16gb-gddr7-dlss4-14848090/",
+    "selector": null
+  },
+  {
+    "id": "rtx5070-zotac-gaming-twin-edge-morele",
+    "model": "Zotac Gaming GeForce RTX 5070 Twin Edge",
+    "vram_gb": 12,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-zotac-gaming-geforce-rtx-5070-twin-edge-12gb-gddr7-dlss4-zt-b50700e-10p-14979507/",
+    "selector": ".price"
+  },
+    {
+    "id": "rtx5060-ti-gainward-python-III-oc-morele",
+    "model": "Gainward GeForce RTX 5060 Ti Python III OC",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gainward-geforce-rtx-5060-ti-python-iii-oc-16gb-gddr7-dlss4-ne7506ts19t1-gb2061t-15409505/",
+    "selector": null
+  },
+  {
+    "id": "rtx5060-ti-zotac-gaming-twin-edge-oc-morele",
+    "model": "Zotac Gaming GeForce RTX 5060 Ti Twin Edge OC",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-zotac-gaming-geforce-rtx-5060-ti-twin-edge-oc-16gb-gddr7-dlss4-zt-b50620h-10m-14863867/",
+    "selector": ".price"
+  },
+    {
+    "id": "rtx5060-ti-gigabyte-windforce-max-oc-morele",
+    "model": "Gigabyte GeForce RTX 5060 Ti Windforce MAX OC",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5060-ti-windforce-max-oc-16gb-gddr7-dlss4-gv-n506twf2max-oc-16gd-15458116/",
+    "selector": null
+  },
+  {
+    "id": "rtx5060-ti-msi-ventus-2x-morele",
+    "model": "MSI GeForce RTX 5060 Ti Ventus 2X OC Plus",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-msi-geforce-rtx-5060-ti-ventus-2x-oc-plus-16gb-gddr7-dlss4-14848093/",
+    "selector": ".price"
+  },
+    {
+    "id": "rtx5060-ti-gigabyte-eagle-oc-morele",
+    "model": "Gigabyte GeForce RTX 5060 Ti Eagle OC",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5060-ti-eagle-oc-16gb-gddr7-dlss4-gv-n506teagle-oc-16gd-14848069/",
+    "selector": null
+  },
+  {
+    "id": "rtx5060-ti-zotac-gaming-twin-edge-oc-white-morele",
+    "model": "Zotac Gaming GeForce RTX 5060 Ti Twin Edge OC White",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-zotac-gaming-geforce-rtx-5060-ti-twin-edge-oc-white-16gb-gddr7-dlss4-zt-b50620q-10m-15479667/",
+    "selector": ".price"
+  },
+    {
+    "id": "rtx5060-ti-inno3d-twin-x2-morele",
+    "model": "Inno3D GeForce RTX 5060 Ti Twin X2 ",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-inno3d-geforce-rtx-5060-ti-twin-x2-16gb-gddr7-dlss4-n506t2-16d7-191073n-14854444/",
+    "selector": null
+  },
+  {
+    "id": "rtx5060-ti-zotac-gaming-amp-morele",
+    "model": "Zotac Gaming GeForce RTX 5060 Ti AMP",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-zotac-gaming-geforce-rtx-5060-ti-amp-16gb-gddr7-dlss4-zt-b50620f-10m-14863860/",
+    "selector": ".price"
+  },
+    {
+    "id": "rtx5070-gigabyte-eagle-oc-sff-morele",
+    "model": "Gigabyte GeForce RTX 5070 Eagle OC SFF",
+    "vram_gb": 12,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5070-eagle-oc-sff-12gb-gddr7-dlss4-gv-n5070eagle-oc-12gd-14485376/",
+    "selector": null
+  },
+  {
+    "id": "rtx5070-gigabyte-eagle-oc-ice-sff-morele",
+    "model": "Gigabyte GeForce RTX 5070 Eagle OC ICE SFF",
+    "vram_gb": 12,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5070-eagle-oc-ice-sff-12gb-gddr7-dlss4-gv-n5070eagleoc-ice-12gd-14485388/",
+    "selector": ".price"
+  },
+  {
+    "id": "rtx5060-ti-gigabyte-gaming-oc-morele",
+    "model": "Gigabyte GeForce RTX 5060 Ti Gaming OC",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5060-ti-gaming-oc-16gb-gddr7-dlss4-gv-n506tgaming-oc-16gd-14848067/",
+    "selector": ".price"
+  },
+  {
+    "id": "rtx5070-zotac-gaming-twin-edge-oc-morele",
+    "model": "Zotac Gaming GeForce RTX 5070 Twin Edge OC",
+    "vram_gb": 12,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-zotac-gaming-geforce-rtx-5070-twin-edge-oc-12gb-gddr7-dlss4-zt-b50700h-10p-14980128/",
+    "selector": ".price"
+  },
+  {
+    "id": "rtx5060-ti-palit-infinity-3-oc-morele",
+    "model": "Palit GeForce RTX 5060 Ti Infinity 3 OC",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-palit-geforce-rtx-5060-ti-infinity-3-oc-16gb-gddr7-dlss4-ne7506ts19t1-gb2061s-14848078/",
+    "selector": ".price"
+  },
+  {
+    "id": "rtx5060-ti-gigabyte-windforce-oc-morele",
+    "model": "Gigabyte GeForce RTX 5060 Ti Windforce OC",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5060-ti-windforce-oc-16gb-gddr7-dlss4-gv-n506twf2oc-16gd-14848070/",
+    "selector": ".price"
+  },
+  {
+    "id": "rtx5060-ti-pny-oc-dual-fan-morele",
+    "model": "PNY GeForce RTX 5060 Ti Overclocked Dual Fan",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-pny-geforce-rtx-5060-ti-overclocked-dual-fan-16gb-gddr7-dlss4-vcg5060t16dfxpb1-o-15112583/",
+    "selector": ".price"
+  },
+  {
+    "id": "rtx5060-ti-gigabyte-eagle-max-oc-morele",
+    "model": "Gigabyte GeForce RTX 5060 Ti Eagle MAX OC",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5060-ti-eagle-max-oc-16gb-gddr7-dlss4-gv-n506teaglemax-oc-16gd-15399396/",
+    "selector": ".price"
+  },
+  {
+    "id": "rtx5060-ti-gigabyte-eagle-oc-ice-morele",
+    "model": "Gigabyte GeForce RTX 5060 Ti Eagle OC ICE",
+    "vram_gb": 16,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5060-ti-eagle-oc-ice-16gb-gddr7-dlss4-gv-n506teagleoc-ice-16gd-14848068/",
+    "selector": ".price"
+  },
+  {
+    "id": "rtx5070-inno3d-twin-x2-oc-morele",
     "model": "Inno3D GeForce RTX 5070 Twin X2 OC",
     "vram_gb": 12,
-    "shop": "Sklep 2",
+    "shop": "Morele",
     "url": "https://www.morele.net/karta-graficzna-inno3d-geforce-rtx-5070-twin-x2-oc-12gb-gddr7-dlss4-n50702-12d7x-195064n-14763395/",
+    "selector": ".price"
+  },
+  {
+    "id": "rtx5070-gigabyte-gaming-oc-morele",
+    "model": "Gigabyte GeForce RTX 5070 Gaming OC",
+    "vram_gb": 12,
+    "shop": "Morele",
+    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5070-gaming-oc-12gb-gddr7-dlss4-gv-n5070gaming-oc-12gd-14485482/",
     "selector": ".price"
   }
 ]

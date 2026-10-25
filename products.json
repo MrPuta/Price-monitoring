@@ -1,17 +1,18 @@
 [
   {
     "id": "rtx4070s-asus-dual",
-    "model": "RTX 4070 Super",
+    "model": "RTX 5070",
     "vram_gb": 12,
-    "url": "https://example-shop-1.pl/produkt-1",
+    "shop": "Sklep 2",
+    "url": "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5070-gaming-oc-12gb-gddr7-dlss4-gv-n5070gaming-oc-12gd-14485482/",
     "selector": null
   },
   {
     "id": "rtx4070s-asus-dual-shop2",
-    "model": "RTX 4070 Super",
+    "model": "Inno3D GeForce RTX 5070 Twin X2 OC",
     "vram_gb": 12,
     "shop": "Sklep 2",
-    "url": "https://example-shop-2.pl/produkt-2",
+    "url": "https://www.morele.net/karta-graficzna-inno3d-geforce-rtx-5070-twin-x2-oc-12gb-gddr7-dlss4-n50702-12d7x-195064n-14763395/",
     "selector": ".price"
   }
 ]

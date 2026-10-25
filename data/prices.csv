@@ -1,2 +1,3 @@
-timestamp_utc,product,url,price,currency,status
-2026-10-25T19:16:31+00:00,Gigabyte GeForce RTX 5070 Gaming OC,https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-5070-gaming-oc-12gb-gddr7-dlss4-gv-n5070gaming-oc-12gd-14485482/,4399.0,PLN,ok
+timestamp_utc,product_id,model,vram_gb,shop,price,currency,status,url
+2026-10-25T19:24:16+00:00,rtx4070s-asus-dual,RTX 4070 Super,12,example-shop-1.pl,,,"error: HTTPSConnectionPool(host='example-shop-1.pl', port=443): Max retries exceeded with url: /produkt-1 (Caused by NameResolutionError(""HTTPSConnection(host='example-shop-1.pl', port=443): Failed to",https://example-shop-1.pl/produkt-1
+2026-10-25T19:24:16+00:00,rtx4070s-asus-dual-shop2,RTX 4070 Super,12,Sklep 2,,,"error: HTTPSConnectionPool(host='example-shop-2.pl', port=443): Max retries exceeded with url: /produkt-2 (Caused by NameResolutionError(""HTTPSConnection(host='example-shop-2.pl', port=443): Failed to",https://example-shop-2.pl/produkt-2

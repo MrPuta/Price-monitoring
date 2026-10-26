@@ -5,6 +5,7 @@ Przykłady:
   python plot_prices.py --id rtx4070s-asus-dual          # jedna pozycja
   python plot_prices.py --model "4070"                   # wszystkie, których model zawiera "4070"
   python plot_prices.py --model "4070" --vram 12 --days 30
+  python plot_prices.py --name "Ventus" --model 5070   # wybrana linia kart
   python plot_prices.py --shop x-kom --out x-kom.png
   python plot_prices.py --show                           # otwórz okno zamiast tylko zapisu PNG
 """
@@ -18,6 +19,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--csv", default="data/prices.csv")
 parser.add_argument("--id", nargs="+", help="jedno lub kilka product_id")
 parser.add_argument("--model", help="fragment nazwy modelu (bez wielkości liter)")
+parser.add_argument("--name", help="fragment pełnej nazwy karty, np. Ventus")
 parser.add_argument("--shop", help="fragment nazwy sklepu")
 parser.add_argument("--vram", type=int, help="ilość VRAM w GB")
 parser.add_argument("--days", type=int, help="tylko ostatnie N dni")
@@ -29,6 +31,8 @@ if not args.show:
     matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
+from charts_common import add_label, draw_chart  # noqa: E402
+
 df = pd.read_csv(args.csv, parse_dates=["timestamp_utc"])
 df = df[df["status"] == "ok"].copy()
 
@@ -36,6 +40,8 @@ if args.id:
     df = df[df["product_id"].isin(args.id)]
 if args.model:
     df = df[df["model"].str.contains(args.model, case=False, na=False)]
+if args.name and "name" in df:
+    df = df[df["name"].fillna("").str.contains(args.name, case=False)]
 if args.shop:
     df = df[df["shop"].str.contains(args.shop, case=False, na=False)]
 if args.vram:
@@ -47,20 +53,10 @@ if args.days:
 if df.empty:
     raise SystemExit("Brak danych dla podanych filtrów.")
 
-df["label"] = df["model"] + " " + df["vram_gb"].astype(str) + "GB (" + df["shop"] + ")"
 
-fig, ax = plt.subplots(figsize=(11, 5.5))
-for label, g in df.groupby("label"):
-    g = g.sort_values("timestamp_utc")
-    ax.plot(g["timestamp_utc"], g["price"], marker="o", markersize=3, label=label)
-
-ax.set_ylabel(f"Cena ({df['currency'].iloc[0]})")
-ax.set_title("Historia cen kart graficznych")
-ax.grid(alpha=0.3)
-ax.legend(fontsize=8)
-fig.autofmt_xdate()
-fig.tight_layout()
-fig.savefig(args.out, dpi=150)
+df = add_label(df)
+fig = draw_chart(df, "Historia cen kart graficznych")
+fig.savefig(args.out, dpi=150, bbox_inches="tight")
 print(f"Zapisano {args.out}")
 if args.show:
     plt.show()

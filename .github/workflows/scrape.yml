@@ -5,7 +5,7 @@ on:
     # Kilka prób wokół 8:00 i 20:00 czasu polskiego (cron działa w UTC, więc
     # lato i zima są pokryte tymi samymi wpisami). Skrypt sam pomija zbędne uruchomienia.
     - cron: "17 6,7,9,11,18,19,21,23 * * *"
-  workflow_dispatch: # ręczne uruchomienie z zakładki Actions (zawsze robi pomiar)
+  workflow_dispatch:          # ręczne uruchomienie z zakładki Actions (zawsze robi pomiar)
 
 permissions:
   contents: write
@@ -16,6 +16,7 @@ concurrency:
 
 jobs:
   scrape:
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,19 +32,11 @@ jobs:
         id: scrape
         run: python scraper.py ${{ github.event_name == 'workflow_dispatch' && '--force' || '' }}
 
-      - name: Generate charts
-        if: always() && steps.scrape.outputs.skipped != 'true'
-        continue-on-error: true
-        run: |
-          pip install -r requirements-analysis.txt
-          python generate_charts.py
-
       - name: Commit data
         if: always() && steps.scrape.outputs.skipped != 'true'
         run: |
           git config user.name "price-bot"
           git config user.email "price-bot@users.noreply.github.com"
           git add data/prices.csv
-          [ -d charts ] && git add charts || true
           git diff --staged --quiet || git commit -m "Update prices $(date -u +'%Y-%m-%d %H:%M')"
           git push

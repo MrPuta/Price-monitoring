@@ -2,8 +2,10 @@ name: Scrape GPU prices
 
 on:
   schedule:
-    - cron: "30 8,18 * * *"   # 2x dziennie, czas UTC (08:00 i 20:00 w Polsce latem)
-  workflow_dispatch:          # ręczne uruchomienie z zakładki Actions
+    # Kilka prób wokół 8:00 i 20:00 czasu polskiego (cron działa w UTC, więc
+    # lato i zima są pokryte tymi samymi wpisami). Skrypt sam pomija zbędne uruchomienia.
+    - cron: "17 6,7,9,11,18,19,21,23 * * *"
+  workflow_dispatch: # ręczne uruchomienie z zakładki Actions (zawsze robi pomiar)
 
 permissions:
   contents: write
@@ -25,17 +27,19 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - run: python scraper.py
+      - name: Scrape prices
+        id: scrape
+        run: python scraper.py ${{ github.event_name == 'workflow_dispatch' && '--force' || '' }}
 
       - name: Generate charts
-        if: always()
+        if: always() && steps.scrape.outputs.skipped != 'true'
         continue-on-error: true
         run: |
           pip install -r requirements-analysis.txt
           python generate_charts.py
 
       - name: Commit data
-        if: always()
+        if: always() && steps.scrape.outputs.skipped != 'true'
         run: |
           git config user.name "price-bot"
           git config user.email "price-bot@users.noreply.github.com"

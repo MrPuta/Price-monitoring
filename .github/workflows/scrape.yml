@@ -2,7 +2,7 @@ name: Scrape GPU prices
 
 on:
   schedule:
-    - cron: "0 6,18 * * *"   # 2x dziennie, czas UTC (08:00 i 20:00 w Polsce latem)
+    - cron: "30 8,18 * * *"   # 2x dziennie, czas UTC (08:00 i 20:00 w Polsce latem)
   workflow_dispatch:          # ręczne uruchomienie z zakładki Actions
 
 permissions:
